@@ -7,7 +7,20 @@ const youtube = google.youtube({
 
 const channelsPlaylistIds = {
   "The Net Ninja": "UUW5YeuERMmlnqo4oq8vwUpg",
-  "Ben Awad": "UU-8QAzbLcRglXeN_MY9blyw"
+  "Ben Awad": "UU-8QAzbLcRglXeN_MY9blyw",
+  "Traversy Media": "UU29ju8bIPH5as8OGnQzwJyA",
+  "Basarat Ali": "UUGD_0i6L48hucTiiyhb5QzQ",
+  BookMark: "UUtoBjWAGbdlf9FdeQF3Be9Q",
+  Codegrid: "UU7pVho4O31FyfQsZdXWejEw",
+  DarkCode: "UUD3KVjbb7aq2OiOffuungzw",
+  "Devon Crawford": "UUDrekHmOnkptxq3gUU0IyfA",
+  "freeCodeCamp.org": "UU8butISFwT-Wl7EV0hUK0BQ",
+  "Julio Codes": "UUeHWTyAKBv_WnW8gsEKGECw",
+  "Kurs Reacta": "UU9b88oZkSb3gAWybsVIM6eg",
+  "Online Tutorials": "UUbwXnUipZsLfUckBPsC7Jog",
+  "Online web ustaad": "UU8xTHK97Ng__KZvGcO_K7CA",
+  overment: "UU_MIaHmSkt9JHNZfQ_gUmrg",
+  "The Coding Train": "UUvjgXvBlbQiydffZU7m1_aw"
 };
 
 const playlistsIds = Object.keys(channelsPlaylistIds).map(
