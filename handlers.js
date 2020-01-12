@@ -11,7 +11,7 @@ module.exports.getYoutubeVideos = async ({ query: { videoCount } }, res) => {
   }
 
   const videos = await getVideos(videoCount);
-  return res.status(200).json({ videos });
+  return res.status(200).json(videos);
 };
 
 const githubEndPoint = "https://api.github.com/users/hommat/repos?sort=created";
@@ -28,5 +28,5 @@ module.exports.getGithubRepos = async (req, res) => {
     })
   );
 
-  res.status(200).json({ repos: filteredRepos });
+  res.status(200).json(filteredRepos);
 };
