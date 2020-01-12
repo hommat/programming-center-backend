@@ -1,3 +1,4 @@
+const axios = require("axios");
 const { getVideos } = require("./youtube");
 const { badRequest } = require("./errror");
 
@@ -11,4 +12,21 @@ module.exports.getYoutubeVideos = async ({ query: { videoCount } }, res) => {
 
   const videos = await getVideos(videoCount);
   return res.status(200).json({ videos });
+};
+
+const githubEndPoint = "https://api.github.com/users/hommat/repos?sort=created";
+
+module.exports.getGithubRepos = async (req, res) => {
+  const repos = await axios.get(githubEndPoint);
+  const filteredRepos = repos.data.map(
+    ({ id, name, html_url, homepage, description }) => ({
+      id,
+      name,
+      description,
+      githubURL: html_url,
+      deployURL: homepage
+    })
+  );
+
+  res.status(200).json({ repos: filteredRepos });
 };
