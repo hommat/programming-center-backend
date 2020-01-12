@@ -18,7 +18,8 @@ const githubEndPoint = "https://api.github.com/users/hommat/repos?sort=created";
 
 module.exports.getGithubRepos = async (req, res) => {
   const repos = await axios.get(githubEndPoint);
-  const filteredRepos = repos.data.map(
+  const filteredRepos = repos.data.filter(repo => !repo.fork);
+  const mappedRepos = filteredRepos.map(
     ({ id, name, html_url, homepage, description }) => ({
       id,
       name,
@@ -28,5 +29,5 @@ module.exports.getGithubRepos = async (req, res) => {
     })
   );
 
-  res.status(200).json(filteredRepos);
+  res.status(200).json(mappedRepos);
 };
