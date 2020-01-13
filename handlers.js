@@ -40,7 +40,7 @@ module.exports.getRedditPosts = async (
     return badRequest(res, `Limit must be <= ${maxRedditPosts}.`);
   }
 
-  const query = `https://www.reddit.com/r/${sub}/.json?limit=${limit}`;
+  let query = `https://www.reddit.com/r/${sub}/.json?limit=${limit}`;
   if (after) query += `&after=${after};`;
 
   const redditRes = await axios.get(query);
