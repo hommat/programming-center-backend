@@ -48,7 +48,12 @@ module.exports.getRedditPosts = async (
   const mappedPosts = posts.map(post => ({
     title: post.data.title,
     score: post.data.ups,
-    name: post.data.name
+    name: post.data.name,
+    createdAt: post.data.created,
+    thumbnail: post.data.thumbnail,
+    author: post.data.author,
+    url: post.data.url,
+    redditurl: "https://www.reddit.com" + post.data.permalink
   }));
 
   res.status(200).json(mappedPosts);
