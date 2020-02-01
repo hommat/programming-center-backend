@@ -1,6 +1,6 @@
 # programming-center-backend
 
-> Backend for my programming-center app
+> Backend for my [programming-center](https://github.com/hommat/programming-center-frontend) app.
 
 ## Table of contents
 
